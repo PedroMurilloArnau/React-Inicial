@@ -11,7 +11,7 @@ En una página, toda la página se podría englobar en un componente.
     - Componente menú, reutilizable.
     - Dentro de el podríamos tener subcompoentes como por ejemplo menuItem.
 
-Creamos a la vez un ** árbol de componentes ** para poder crear nuestra aplicación.Ejemplo:
+Creamos a la vez un **árbol de componentes** para poder crear nuestra aplicación.Ejemplo:
 
 > CervezasAPP > Router > Screen/Pag > Menú > MenuItem
 
