@@ -117,3 +117,39 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 ```
 
 
+## 2 EVENTOS
+
+### 2.1 EVENTOS CLICk
+
+- La documentación la podemos encontrar en el siguiente enlace:
+
+[Eventos React](https://es.reactjs.org/docs/events.html)
+
+- El cambio del estado de la página la podemos utilzar mediante **Hooks**
+
+[Más info de los Hooks](https://es.reactjs.org/docs/hooks-intro.html)
+
+- Los Hooks en React se denominan como **use**
+
+Para importar de React uno de los Hooks lo hacemos de la siguiente manera:
+
+```
+   import { useState } from 'react';
+```
+Posteriormente creamos una constante en la cual creamos una nueva constante para asignar el valor de nuetro Hook:
+
+```
+    const [ counter, setCounter ] = useState( 0 )
+```
+
+En este caso seteamos el valor incial de nuestra Hook a ***0*** y el metodo del cambio se realizara a través del metodo ***setCounter***. Notese que los métodos de modificación de nuestros Hooks se notaran de la sigueinte forma "***set*** + Nombre de la variable".
+
+En nuestro caso la modificación se realiza a través del método onClick, en nuestro caso **handleAdd**:
+
+```
+    const handleAdd = () => {
+        setCounter( counter + 1);
+    }
+```
+
+- Es importante tener en cuenta que cada vez que modificamos el Hook el componente se va a renderizar nuevamente, por lo que tenemos que tener en cuenta estas situaciones para que no se produzcan efectos no deseados en nuestra página.

@@ -1,8 +1,8 @@
-import { Fragment } from 'React';
+
 import PropTypes from 'prop-types';
 import { FirstApp } from './FirstApp';
 
-export const HelloWorld = ( {title , subTitle}) => {
+export const HelloWorld = ( {title , subTitle, apartSingle}) => {
 
    // console.log(props)
 
@@ -18,6 +18,8 @@ export const HelloWorld = ( {title , subTitle}) => {
         <>
             <h1>Hello World I'm Pedro { title }</h1>
             <p>Soy un hijo { subTitle + 1 }</p>
+            <p>Este es un valor por defecto: { apartSingle }</p>
+            
         </>
     );
 
@@ -25,5 +27,10 @@ export const HelloWorld = ( {title , subTitle}) => {
 
 HelloWorld.propTypes = {
     title: PropTypes.string.isRequired,
-    subTitle: PropTypes.number.isRequired
+    subTitle: PropTypes.number.isRequired,
+}
+
+HelloWorld.defaultProps = {
+    title: 'No tiene titulo',
+    apartSingle: 'Single'
 }
