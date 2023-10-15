@@ -154,9 +154,3 @@ En nuestro caso la modificación se realiza a través del método onClick, en nu
 
 - Es importante tener en cuenta que cada vez que modificamos el Hook el componente se va a renderizar nuevamente, por lo que tenemos que tener en cuenta estas situaciones para que no se produzcan efectos no deseados en nuestra página.
 
-
-# Prueba de rendimiento
-
-Estamos probando que todo lo que tenemos funciona adecuada en el nuevo repo local.
-
-Tras las pruebas debemos borrar estas lineas
