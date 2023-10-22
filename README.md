@@ -152,5 +152,34 @@ En nuestro caso la modificación se realiza a través del método onClick, en nu
     }
 ```
 
-- Es importante tener en cuenta que cada vez que modificamos el Hook el componente se va a renderizar nuevamente, por lo que tenemos que tener en cuenta estas situaciones para que no se produzcan efectos no deseados en nuestra página.
+## PRUEBAS CON JEST
 
+Lo primero de todo tendremos que entrar en la pagina de Jest.
+
+[Jest](https://jestjs.io/docs/getting-started)
+
+Debemos instalar Jest.
+
+Si tenemos ***npm*** mediante el siguiente codigo, dentro de nuestro ejercicio.
+
+```
+   npm install --save-dev jest
+
+```
+
+Ademas debemos configurar nuestro packege.json y en el apartado de ***scripts*** debemos de incluir el siguiente script:
+
+```
+     "test": "jest"
+```
+Pero para que las pruebas se actualicen cada vez que modifiquemos nuestras pruebas debemos modificarlo de la siguiente manera:
+
+```
+ npm install --save-dev jest
+
+```
+
+- Posteriormetne creamos una carpeta de pruebas dentro de nuestro ejercicio. Y dentro de ella y archivo, en nuestro caso demo.test.js
+
+
+Las diferentes funciones las tenemos en la documentacion de jest
