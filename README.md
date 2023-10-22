@@ -152,8 +152,9 @@ En nuestro caso la modificación se realiza a través del método onClick, en nu
     }
 ```
 
-## PRUEBAS CON JEST
+## 3 PRUEBAS CON JEST
 
+### 3.1 INSTALACION Y PREPARACION DE JEST
 Lo primero de todo tendremos que entrar en la pagina de Jest.
 
 [Jest](https://jestjs.io/docs/getting-started)
@@ -179,7 +180,78 @@ Pero para que las pruebas se actualicen cada vez que modifiquemos nuestras prueb
 
 ```
 
+- Debemos de configurar Babel para poder exportar nuestros metodos hacia los teste para ello deberemos crear un archivo en nuestra raiz.
+
+***babel.config.cjs***
+
+Dentro de este archivo deberemos de pegar las siguiente lineas de codigo:
+
+```
+
+module.exports = {
+    presets: [
+        ['@babel/preset-env', {
+            targets: {
+                node: 'current'
+            }
+        }
+    ]
+   ],
+};
+
+```
+
 - Posteriormetne creamos una carpeta de pruebas dentro de nuestro ejercicio. Y dentro de ella y archivo, en nuestro caso demo.test.js
 
 
-Las diferentes funciones las tenemos en la documentacion de jest
+Las diferentes funciones las tenemos en la documentacion de jest. Pero para tener los difirentes short-cuts o accesos rapidos en Visual Studio Code deberemos desacargarnos la siguiente configuracion
+
+```
+   npm add -D @types/jest
+```
+
+### 3.2 CREACION DE PRUEBAS
+
+Para crear las purebas debemos de crear una carpeta a modo de espejo los archivos que queremos probar.
+
+En nuestro caso para probar ***02-template-string***, tendremos que crear el archivo  ***02-template-string.test.js***.
+
+- Debemos de crear una estructura que se inicializara con una descripcion:
+```
+
+describe('Nombre que queramos probar', () => {  });
+
+```
+- Dentro de nuestro describe incluiremos los diferentes tests:
+```
+
+   test('Lo que queremos probar', () => { });
+
+```
+- Y en los diferentes test definiremos que esperamos encontrar
+
+```
+
+   expect(nuestraPrueba).metodoComparacion(ResultadoArchivo)
+
+```
+
+En nuestro ejemplo de *02-template-string.test.js*, probaremos que el string resultante del ***Saludo*** es exactamente el mismo que el de nuestro metodo de ***getSaludo***, de nuestro archivo *02-template-string*.
+
+Para ello creamos dos constantes, una para definir el ***nombre*** y otro para recoger el resultado del metodo pasandole por parametros el ***nombre***. Luego definimos el resultado esperedo, utilizando el método definido de Jest ***toBe***.
+```
+
+   describe('Pruebas en 02-template-string', () => {
+    
+    test('getSaludo debe retornar "Hola Mundo"', () => {
+      
+        const name = "Fernando";
+        const msg = getSaludo( name );
+
+        expect( msg ).toBe(`Hola ${ name }`)
+
+    });
+   });
+
+```
+
